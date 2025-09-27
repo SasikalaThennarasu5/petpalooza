@@ -117,7 +117,4 @@ EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD")
 EMAIL_USE_TLS = config("EMAIL_USE_TLS", cast=bool, default=True)
 
 # CORS (React frontend at localhost:5173 for Vite)
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",     # React local dev
-    "https://your-frontend.vercel.app",  # Vercel/Netlify deployed frontend
-]
+CORS_ALLOW_ALL_ORIGINS = True
