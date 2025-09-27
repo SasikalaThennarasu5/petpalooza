@@ -117,4 +117,7 @@ EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD")
 EMAIL_USE_TLS = config("EMAIL_USE_TLS", cast=bool, default=True)
 
 # CORS (React frontend at localhost:5173 for Vite)
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOWED_ORIGINS = [
+    "https://petpalooza-igpp.vercel.app",  # your Vercel frontend
+    "http://localhost:5173",               # local Vite dev
+]
