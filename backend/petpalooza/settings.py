@@ -33,10 +33,11 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",   # cors
+    "django.middleware.common.CommonMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
-    "django.middleware.common.CommonMiddleware",
+    
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
@@ -118,6 +119,7 @@ EMAIL_USE_TLS = config("EMAIL_USE_TLS", cast=bool, default=True)
 
 # CORS (React frontend at localhost:5173 for Vite)
 CORS_ALLOWED_ORIGINS = [
-    "https://petpalooza-igpp.vercel.app",  # your Vercel frontend
-    "http://localhost:5173",               # local Vite dev
+    "https://petpalooza-igpp.vercel.app",   # your Vercel frontend
+    "https://petpalooza-ah6l.vercel.app",   # any other frontend domain you use
+    "http://localhost:5173",                # local Vite dev
 ]
